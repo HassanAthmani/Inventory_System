@@ -13,8 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.concurrent.TimeUnit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,14 +24,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import inventory_system.validator.Validator;
 
 /**
  *
@@ -90,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
     private ObservableList<instock> data;
 
     @FXML
-    void addData(ActionEvent event) throws SQLException {
+    void addData(ActionEvent event) throws SQLException, InterruptedException {
 
         String txtBrand = textBrand.getText();
         String txtMac = textMac.getText();
@@ -106,9 +103,16 @@ public class FXMLDocumentController implements Initializable {
 
             
 
-            String sql = "INSERT INTO `inventory_project`.`instock` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) VALUES (NULL,'" + txtMac + "','" + txtBrand + "','" + txtModel + "','" + txtVersion + "', CURDATE() );";
+            String sql = "INSERT INTO `inventory_project`.`all_items` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) VALUES (NULL,'" + txtMac + "','" + txtBrand + "','" + txtModel + "','" + txtVersion + "', CURDATE() );";
 
             statement.executeUpdate(sql);
+             
+            TimeUnit.SECONDS.sleep(1);  
+            
+            String instock1 = "INSERT INTO `inventory_project`.`instock` SELECT * FROM `inventory_project`.`all_items` WHERE mac_address="+txtMac;
+            statement.executeUpdate(instock1);
+            
+            
 
             data = FXCollections.observableArrayList();
             //Execute query and store result in a resultset
