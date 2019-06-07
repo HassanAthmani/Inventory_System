@@ -38,6 +38,8 @@ public class DashboardController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -45,17 +47,32 @@ public class DashboardController implements Initializable {
     }    
 
     @FXML
-    private void ShowAllItems(ActionEvent event) {
+    private void ShowAllItems(ActionEvent event) throws IOException {
+        //setting scene variable
+        Parent sceneFxml= FXMLLoader.load(getClass().getResource("all_items/all_itemsUI.fxml"));
+        Scene newScene=new Scene(sceneFxml);
+        
+        //getting stage
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        //setting scene on stage
+        window.setScene(newScene);
+        window.show();
+        
+        
     }
 
     @FXML
     private void ShowMaintain(ActionEvent event) {
     }
 
+    
+    
+
     @FXML
     private void ShowInstock(ActionEvent event) throws IOException {
         //setting scene variable
-        Parent sceneFxml= FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent sceneFxml= FXMLLoader.load(getClass().getResource("instock.fxml"));
         Scene newScene=new Scene(sceneFxml);
         
         //getting stage
