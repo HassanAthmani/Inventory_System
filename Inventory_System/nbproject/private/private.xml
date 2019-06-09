@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Inventory_System/src/inventory_system/Inventory_System.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Inventory_System/src/inventory_system/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Inventory_System/src/inventory_system/instock.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Inventory_System/Inventory_System/src/inventory_system/giveUser/giveUser_1.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Inventory_System/Inventory_System/src/inventory_system/giveUser/giveUserController.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Inventory_System/Inventory_System/src/inventory_system/DashboardController.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Inventory_System/Inventory_System/src/inventory_system/all_items/All_itemsUIController.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Inventory_System/Inventory_System/src/inventory_system/InstockDocumentController.java</file>
         </group>
     </open-files>
 </project-private>

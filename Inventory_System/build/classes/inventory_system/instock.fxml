@@ -9,16 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="665.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
    <children>
-      <TableView fx:id="tableInstock" layoutX="239.0" layoutY="56.0" prefHeight="582.0" prefWidth="710.0">
+      <TableView fx:id="tableInstock" layoutX="239.0" layoutY="56.0" prefHeight="606.0" prefWidth="835.0">
         <columns>
-          <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="columnMac" prefWidth="135.199951171875" text="MAC ADDRESS" />
-            <TableColumn fx:id="columnBrand" prefWidth="118.4000244140625" text="BRAND" />
-            <TableColumn fx:id="columnModel" prefWidth="124.79998779296875" text="MODEL" />
-            <TableColumn fx:id="columnVersion" prefWidth="127.199951171875" text="VERSION" />
-            <TableColumn fx:id="columnDate" prefWidth="125.5999755859375" text="ADDITION DATE" />
+          <TableColumn fx:id="columnId" prefWidth="54.39997863769531" text="ID" />
+          <TableColumn fx:id="columnMac" prefWidth="132.800048828125" text="MAC ADDRESS" />
+            <TableColumn fx:id="columnBrand" prefWidth="116.00006103515625" text="BRAND" />
+            <TableColumn fx:id="columnModel" prefWidth="132.0" text="MODEL" />
+            <TableColumn fx:id="columnVersion" prefWidth="132.7999267578125" text="VERSION" />
+            <TableColumn fx:id="columnDate" prefWidth="139.99997558593748" text="ADDITION DATE" />
+            <TableColumn fx:id="columnEdit" prefWidth="139.99997558593748" text="EDIT" />
         </columns>
       </TableView>
       <Label layoutX="66.0" layoutY="162.0" prefHeight="18.0" prefWidth="104.0" text="MAC ADDRESS">
@@ -49,17 +50,22 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="addRecord" layoutX="42.0" layoutY="381.0" mnemonicParsing="false" onAction="#addData" prefHeight="38.0" prefWidth="132.0" text="ADD RECORD">
+      <Button fx:id="addRecord" layoutX="42.0" layoutY="359.0" mnemonicParsing="false" onAction="#addData" prefHeight="38.0" prefWidth="132.0" text="ADD RECORD">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="loadData" layoutX="56.0" layoutY="472.0" mnemonicParsing="false" onAction="#loadFromDB" prefHeight="26.0" prefWidth="104.0" text="LOAD DATA">
+      <Button fx:id="loadData" layoutX="56.0" layoutY="439.0" mnemonicParsing="false" onAction="#loadFromDB" prefHeight="26.0" prefWidth="104.0" text="LOAD DATA">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button layoutX="32.0" layoutY="556.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="152.0" text="Back to Dashboard">
+      <Button layoutX="32.0" layoutY="592.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="152.0" text="Back to Dashboard">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
+      <Button fx:id="deleteRow" layoutX="42.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="38.0" prefWidth="132.0" text="SEND TO DEFERRED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

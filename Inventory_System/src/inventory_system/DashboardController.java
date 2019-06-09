@@ -63,7 +63,18 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    private void ShowMaintain(ActionEvent event) {
+    private void ShowMaintain(ActionEvent event) throws IOException {
+        
+        //setting scene variable
+        Parent sceneFxml= FXMLLoader.load(getClass().getResource("maintanance/MaintananceForm.fxml"));
+        Scene newScene=new Scene(sceneFxml);
+        
+        //getting stage
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        //setting scene on stage
+        window.setScene(newScene);
+        window.show();
     }
 
     
@@ -84,11 +95,32 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    private void ShowDeferred(ActionEvent event) {
+    private void ShowDeferred(ActionEvent event) throws IOException {
+        //setting scene variable
+        Parent sceneFxml= FXMLLoader.load(getClass().getResource("/inventory_system/EditUI/deferredForm.fxml"));
+        Scene newScene=new Scene(sceneFxml);
+        
+        //getting stage
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        //setting scene on stage
+        window.setScene(newScene);
+        window.show();
     }
 
     @FXML
-    private void ShowWithUser(ActionEvent event) {
+    private void ShowWithUser(ActionEvent event) throws IOException {
+        //setting scene variable
+        Parent sceneFxml= FXMLLoader.load(getClass().getResource("/inventory_system/giveUser/giveUser.fxml"));
+        Scene newScene=new Scene(sceneFxml);
+        
+        //getting stage
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        //setting scene on stage
+        window.setScene(newScene);
+        window.show();
+        
     }
     
 }
