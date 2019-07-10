@@ -94,6 +94,9 @@ public class ShowGivenMachinesController implements Initializable {
 
     @FXML
     private TextField txtDate;
+    
+     @FXML
+    private TextField txtReason;
 
     @FXML
     private Button btnLoad;
@@ -349,7 +352,7 @@ public class ShowGivenMachinesController implements Initializable {
     void sendToDeferred(ActionEvent event) throws SQLException, InterruptedException {
         String textMac = txtMac.getText();
         
-        if(txtMac.getText().isEmpty()){
+        if(txtMac.getText().isEmpty() || txtReason.getText().isEmpty()){
              int response = JOptionPane.showConfirmDialog(
         null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);
         }
@@ -361,9 +364,20 @@ public class ShowGivenMachinesController implements Initializable {
             String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
             connection = DriverManager.getConnection(url, userName, password);
             Statement statement = connection.createStatement(); 
+            
+            String reason= txtReason.getText(); 
+            String textId=txtId.getText(); 
+            String textBrand= txtBrand.getText(); 
+            //String textMac
+            String textModel=txtModel.getText();
+            String textVersion=txtVersion.getText();
+            String textDate=txtDate.getText();
+            
+            
  
             
-            String deferred = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()  FROM `inventory_project`.`with_user` WHERE mac_address="+textMac;
+            //String deferred = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`,`reason`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()"+reason+"  FROM `inventory_project`.`with_user` WHERE mac_address="+textMac;
+            String deferred="INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`,`reason`) VALUES ('" + textId + "','" + textMac + "','" + textBrand + "','" + textModel + "','" + textVersion + "','" + textDate + "', CURDATE(),'" + reason + "' )";
             statement.executeUpdate(deferred);
             
             TimeUnit.SECONDS.sleep(1);  

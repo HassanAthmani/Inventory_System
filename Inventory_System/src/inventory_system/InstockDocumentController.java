@@ -39,6 +39,8 @@ import static inventory_system.all_items.All_itemsUIController.password;
 import static inventory_system.all_items.All_itemsUIController.userName;
 import inventory_system.all_items.all_items;
 import java.util.logging.Level;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
@@ -49,6 +51,9 @@ public class InstockDocumentController implements Initializable {
     public Connection connection;
     public static String userName = "root";
     public static String password = "";
+    
+     String txtId;
+    String txtDate;
     
     
 ///INSTOCK
@@ -90,6 +95,13 @@ public class InstockDocumentController implements Initializable {
 
     @FXML
     private TextField textVersion;
+    
+    @FXML
+    private TextField textDate;
+
+    @FXML
+    private TextField textId;
+
 
     @FXML
     private Button addRecord;
@@ -99,7 +111,39 @@ public class InstockDocumentController implements Initializable {
     
     @FXML
     private Button deleteRow;
+    
+    
+    ////////////////////////////////////////
    
+     
+  /* public InstockDocumentController(String txtId,String txtDate){
+       this.txtId=txtId;
+       this.txtDate=txtDate;
+   }
+    
+    
+    //GETTER///
+    /////
+    public String getId(){   
+       return txtId;
+        
+    }
+    
+    //////
+    public String getDate(){                  
+        return txtDate;
+    }
+    
+    //SETTER///
+    ///
+    public void setId(String Value) {
+        this.txtId=Value;
+    }
+    
+    public void setDate(String Value) {
+        txtDate=Value;
+    }*/
+   /////////////////////////////////////////////
     
     ///DEFERRED
     
@@ -127,11 +171,17 @@ public class InstockDocumentController implements Initializable {
     @FXML
     private TableColumn<deferred, String> columnDeferred_date4;
     
+    @FXML
+    private TableColumn<deferred, String> columnReason;
+    
    @FXML
     private Button back4;
 
     @FXML
     private Button loadData4;
+    
+    @FXML
+    private TextField txtReason;
 
     @FXML
     void GoBack(ActionEvent event) throws IOException {
@@ -169,7 +219,7 @@ public class InstockDocumentController implements Initializable {
 
             while (rs.next()) {
                 //get string from db
-                list4.add(new deferred(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                list4.add(new deferred(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8)));
             }
 
         } catch (ClassNotFoundException ex) {
@@ -186,6 +236,7 @@ public class InstockDocumentController implements Initializable {
        columnVersion4.setCellValueFactory(new PropertyValueFactory<>("version"));
         columnAddition_date4.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
         columnDeferred_date4.setCellValueFactory(new PropertyValueFactory<>("deferred_date"));
+         columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
 
         tableDeferred.setItems(null);
        tableDeferred.setItems(list4);
@@ -277,6 +328,7 @@ public class InstockDocumentController implements Initializable {
     @FXML
     void loadFromDB(ActionEvent event) throws SQLException, IOException {
         //DB connection details
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -341,6 +393,11 @@ public class InstockDocumentController implements Initializable {
                                textMac.setText(String.valueOf(p.getMac_address()));
                                textModel.setText(String.valueOf(p.getModel()));
                                textVersion.setText(String.valueOf(p.getVersion()));
+                               textDate.setText(String.valueOf(p.getAddition_date()));
+                               textId.setText(String.valueOf(p.getId()));
+                               
+                               
+                               
                                
                                //PREVENT USER FROM EDITING TEXTFIELDS                               
                                textBrand.setEditable(false);
@@ -373,7 +430,7 @@ public class InstockDocumentController implements Initializable {
     void deleteSelectedRow(ActionEvent event) throws SQLException, InterruptedException {
         
         String txtMac = textMac.getText();
-        if(textMac.getText().isEmpty()){
+        if(textMac.getText().isEmpty() || txtReason.getText().isEmpty()){
             int response = JOptionPane.showConfirmDialog(
         null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);            
         }
@@ -387,8 +444,19 @@ public class InstockDocumentController implements Initializable {
             connection = DriverManager.getConnection(url, userName, password);
             Statement statement = connection.createStatement(); 
  
+            //String txtMac
+            String txtBrand=textBrand.getText();
+            String txtModel=textModel.getText();
+            String txtVersion=textVersion.getText();
+            String reason=txtReason.getText();
+            String txtId=textId.getText();
+            String txtDate=textDate.getText();
             
-            String instock1 = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()  FROM `inventory_project`.`instock` WHERE mac_address="+txtMac;
+            
+            
+            
+            //String instock1 = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()  FROM `inventory_project`.`instock` WHERE mac_address="+txtMac;
+            String instock1="INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`,`reason`) VALUES ('" + txtId + "','" + txtMac + "','" + txtBrand + "','" + txtModel + "','" + txtVersion + "','" + txtDate + "', CURDATE(),'" + reason + "' );";
             statement.executeUpdate(instock1);
             
             TimeUnit.SECONDS.sleep(1);  
@@ -424,6 +492,15 @@ public class InstockDocumentController implements Initializable {
         tableInstock.setItems(null);
         tableInstock.setItems(data);
         }
+        
+        //SET TEXTFIELDS TO BE BLANK
+        textBrand.setText("");
+        textMac.setText("");
+        textModel.setText("");
+        textVersion.setText("");
+        txtReason.setText("");
+        textId.setText("");
+        textDate.setText("");
         
 
     }

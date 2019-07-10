@@ -94,11 +94,14 @@ public class InMaintananceController implements Initializable {
     private TextField txtDate;
 
     @FXML
+    private TextField txtReason;
+
+    @FXML
     private Button btnLoad;
-    
+
     public static String userName1 = "root";
     public static String password = "";
-    
+
     public Connection connection;
     //Initialize observable list 29:57
     private ObservableList<maintanance> data;
@@ -106,12 +109,12 @@ public class InMaintananceController implements Initializable {
     @FXML
     void back(ActionEvent event) throws IOException {
         //setting scene variable
-        Parent sceneFxml= FXMLLoader.load(getClass().getResource("/inventory_system/maintanance/MaintananceForm.fxml"));
-        Scene newScene=new Scene(sceneFxml);
-        
+        Parent sceneFxml = FXMLLoader.load(getClass().getResource("/inventory_system/maintanance/MaintananceForm.fxml"));
+        Scene newScene = new Scene(sceneFxml);
+
         //getting stage
-        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
-        
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         //setting scene on stage
         window.setScene(newScene);
         window.show();
@@ -120,7 +123,7 @@ public class InMaintananceController implements Initializable {
 
     @FXML
     void loadMachines(ActionEvent event) throws SQLException {
-        
+
         //ENABLE USER TO EDIT TEXTFIELDS                               
         txtBrand.setEditable(false);
         txtMac.setEditable(false);
@@ -161,137 +164,7 @@ public class InMaintananceController implements Initializable {
         columnAssigned_date.setCellValueFactory(new PropertyValueFactory<>("date_assigned"));
 
         tableInMaintanance.setItems(null);
-       tableInMaintanance.setItems(data);
-       
-       //Lets create a cell factory to insert a button in every row.
-        Callback<TableColumn<maintanance,String>,TableCell<maintanance,String>> cellFactory=(param)->{
-         
-            //make the tablecell containing button
-            final TableCell<maintanance,String> cell=new TableCell<maintanance,String>(){
-                
-                //override updateItem method
-                @Override
-                public void updateItem(String item,boolean empty){
-                    super.updateItem(item, empty);
-                    
-                    //ensure that cell is created only on non-empty rows
-                    if(empty){
-                        setGraphic(null);
-                        setText(null);
-                    }
-                    else{
-                        //Now we create the action button
-                        final Button editButton=new Button("EDIT");
-                        //attach listener on button
-                        editButton.setOnAction(event ->{
-                            
-                                //Extract the clicked object
-                                maintanance p=getTableView().getItems().get(getIndex());
-                                
-                                //DATA 
-                                //System.out.println(p.getMac_address());  String.valueOf(p.getId())
-                                
-                               txtBrand.setText(String.valueOf(p.getBrand()));
-                               txtMac.setText(String.valueOf(p.getMac_address()));
-                               txtModel.setText(String.valueOf(p.getModel()));
-                               txtVersion.setText(String.valueOf(p.getVersion()));
-                               txtId.setText(String.valueOf(p.getId()));
-                               txtDate.setText(String.valueOf(p.getAddition_date()));
-                               
-                               //PREVENT USER FROM EDITING TEXTFIELDS                               
-                               txtBrand.setEditable(false);
-                               txtMac.setEditable(false);
-                               txtModel.setEditable(false);
-                               txtVersion.setEditable(false);  
-                               txtId.setEditable(false); 
-        
-
-                            
-             
-                    });
-                        //Setting created button
-                        setGraphic(editButton);
-                        setText(null);
-                    }
-                
-                };
-                    
-            };
-            
-            return cell;
-        };  
-        //set the custom factory to action column
-        columnEdit2.setCellFactory(cellFactory);  
-
-    }
-
-    @FXML
-    void returnToInstock(ActionEvent event) throws SQLException, InterruptedException {
-        String textMac = txtMac.getText();
-        
-        if(txtMac.getText().isEmpty()){
-             int response = JOptionPane.showConfirmDialog(
-        null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);
-        }
-        else{
-
-        try {
-
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
-            connection = DriverManager.getConnection(url, userName, password);
-            Statement statement = connection.createStatement(); 
- 
-            
-            String instock = "INSERT INTO `inventory_project`.`instock` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`  FROM `inventory_project`.`in_maintanance` WHERE mac_address="+textMac;
-            statement.executeUpdate(instock);
-            
-            TimeUnit.SECONDS.sleep(1);  
-            
-            String instock2 = "DELETE FROM `inventory_project`.`in_maintanance` WHERE mac_address="+textMac;
-            statement.executeUpdate(instock2);
-            
-             txtBrand.setText("");
-             txtMac.setText("");
-             txtModel.setText("");
-             txtVersion.setText("");
-             txtId.setText("");
-             txtDate.setText("");
-            
-             data = FXCollections.observableArrayList();
-            //Execute query and store result in a resultset
-            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `inventory_project`.`in_maintanance`");
-
-            while (rs.next()) {
-                //get string from db
-                data.add(new maintanance(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8) ));
-            }
-
-        } catch (ClassNotFoundException ex) {
-
-            System.err.println("Error: " + ex);
-        }
-
-        //set cell value factor to tableview.
-        //PropertyValue Factory must be set the same with the one set in model class.
-        columnId2.setCellValueFactory(new PropertyValueFactory<>("id"));
-        columnMac2.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
-        columnBrand2.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        columnModel2.setCellValueFactory(new PropertyValueFactory<>("model"));
-        columnVersion2.setCellValueFactory(new PropertyValueFactory<>("version"));
-        columnAddition_date2.setCellValueFactory(new PropertyValueFactory<>("addition_date"));        
-        columnWorker_name2.setCellValueFactory(new PropertyValueFactory<>("worker_name"));
-        
-        tableInMaintanance.setItems(null);
         tableInMaintanance.setItems(data);
-        
-        //SET TEXTFIELDS TO BE BLANK
-        txtBrand.setText("");
-        txtMac.setText("");
-        txtModel.setText("");
-        txtVersion.setText("");
-        txtId.setText("");
-        txtDate.setText("");
 
         //Lets create a cell factory to insert a button in every row.
         Callback<TableColumn<maintanance, String>, TableCell<maintanance, String>> cellFactory = (param) -> {
@@ -332,7 +205,6 @@ public class InMaintananceController implements Initializable {
                             txtModel.setEditable(false);
                             txtVersion.setEditable(false);
                             txtId.setEditable(false);
-                            txtDate.setEditable(false);
 
                         });
                         //Setting created button
@@ -349,6 +221,131 @@ public class InMaintananceController implements Initializable {
         };
         //set the custom factory to action column
         columnEdit2.setCellFactory(cellFactory);
+
+    }
+
+    @FXML
+    void returnToInstock(ActionEvent event) throws SQLException, InterruptedException {
+        String textMac = txtMac.getText();
+
+        if (txtMac.getText().isEmpty()) {
+            int response = JOptionPane.showConfirmDialog(
+                    null, "no field should be empty", "Required Input", JOptionPane.DEFAULT_OPTION);
+        } else {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+                connection = DriverManager.getConnection(url, userName, password);
+                Statement statement = connection.createStatement();
+
+                String instock = "INSERT INTO `inventory_project`.`instock` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`  FROM `inventory_project`.`in_maintanance` WHERE mac_address=" + textMac;
+                statement.executeUpdate(instock);
+
+                TimeUnit.SECONDS.sleep(1);
+
+                String instock2 = "DELETE FROM `inventory_project`.`in_maintanance` WHERE mac_address=" + textMac;
+                statement.executeUpdate(instock2);
+
+                txtBrand.setText("");
+                txtMac.setText("");
+                txtModel.setText("");
+                txtVersion.setText("");
+                txtId.setText("");
+                txtDate.setText("");
+
+                data = FXCollections.observableArrayList();
+                //Execute query and store result in a resultset
+                ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `inventory_project`.`in_maintanance`");
+
+                while (rs.next()) {
+                    //get string from db
+                    data.add(new maintanance(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+                }
+
+            } catch (ClassNotFoundException ex) {
+
+                System.err.println("Error: " + ex);
+            }
+
+            //set cell value factor to tableview.
+            //PropertyValue Factory must be set the same with the one set in model class.
+            columnId2.setCellValueFactory(new PropertyValueFactory<>("id"));
+            columnMac2.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
+            columnBrand2.setCellValueFactory(new PropertyValueFactory<>("brand"));
+            columnModel2.setCellValueFactory(new PropertyValueFactory<>("model"));
+            columnVersion2.setCellValueFactory(new PropertyValueFactory<>("version"));
+            columnAddition_date2.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
+            columnWorker_name2.setCellValueFactory(new PropertyValueFactory<>("worker_name"));
+
+            tableInMaintanance.setItems(null);
+            tableInMaintanance.setItems(data);
+
+            //SET TEXTFIELDS TO BE BLANK
+            txtBrand.setText("");
+            txtMac.setText("");
+            txtModel.setText("");
+            txtVersion.setText("");
+            txtId.setText("");
+            txtDate.setText("");
+
+            //Lets create a cell factory to insert a button in every row.
+            Callback<TableColumn<maintanance, String>, TableCell<maintanance, String>> cellFactory = (param) -> {
+
+                //make the tablecell containing button
+                final TableCell<maintanance, String> cell = new TableCell<maintanance, String>() {
+
+                    //override updateItem method
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        //ensure that cell is created only on non-empty rows
+                        if (empty) {
+                            setGraphic(null);
+                            setText(null);
+                        } else {
+                            //Now we create the action button
+                            final Button editButton = new Button("EDIT");
+                            //attach listener on button
+                            editButton.setOnAction(event -> {
+
+                                //Extract the clicked object
+                                maintanance p = getTableView().getItems().get(getIndex());
+
+                                //DATA 
+                                //System.out.println(p.getMac_address());  String.valueOf(p.getId())
+                                txtBrand.setText(String.valueOf(p.getBrand()));
+                                txtMac.setText(String.valueOf(p.getMac_address()));
+                                txtModel.setText(String.valueOf(p.getModel()));
+                                txtVersion.setText(String.valueOf(p.getVersion()));
+                                txtId.setText(String.valueOf(p.getId()));
+                                txtDate.setText(String.valueOf(p.getAddition_date()));
+
+                                //PREVENT USER FROM EDITING TEXTFIELDS                               
+                                txtBrand.setEditable(false);
+                                txtMac.setEditable(false);
+                                txtModel.setEditable(false);
+                                txtVersion.setEditable(false);
+                                txtId.setEditable(false);
+                                txtDate.setEditable(false);
+
+                            });
+                            //Setting created button
+                            setGraphic(editButton);
+                            setText(null);
+                        }
+
+                    }
+                ;
+
+                };
+            
+            return cell;
+            };
+            //set the custom factory to action column
+            columnEdit2.setCellFactory(cellFactory);
         }
 
     }
@@ -356,126 +353,134 @@ public class InMaintananceController implements Initializable {
     @FXML
     void sendToDeferred(ActionEvent event) throws SQLException, InterruptedException {
         String textMac = txtMac.getText();
-        
-        if(txtMac.getText().isEmpty()){
-             int response = JOptionPane.showConfirmDialog(
-        null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);
-        }
-        else{
 
-        try {
+        if (txtMac.getText().isEmpty() || txtReason.getText().isEmpty()) {
+            int response = JOptionPane.showConfirmDialog(
+                    null, "no field should be empty", "Required Input", JOptionPane.DEFAULT_OPTION);
+        } else {
 
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
-            connection = DriverManager.getConnection(url, userName, password);
-            Statement statement = connection.createStatement(); 
- 
-            
-            String deferred = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()  FROM `inventory_project`.`in_maintanance` WHERE mac_address="+textMac;
-            statement.executeUpdate(deferred);
-            
-            TimeUnit.SECONDS.sleep(1);  
-            
-            String deferred2 = "DELETE FROM `inventory_project`.`in_maintanance` WHERE mac_address="+textMac;
-            statement.executeUpdate(deferred2);
-            
-            txtBrand.setText("");
-             txtMac.setText("");
-             txtModel.setText("");
-             txtVersion.setText("");
-             txtId.setText("");
-             txtDate.setText("");
-            
-             data = FXCollections.observableArrayList();
-            //Execute query and store result in a resultset
-            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `inventory_project`.`in_maintanance`");
+            try {
 
-            while (rs.next()) {
-                //get string from db
-                data.add(new maintanance(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+                Class.forName("com.mysql.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+                connection = DriverManager.getConnection(url, userName, password);
+                Statement statement = connection.createStatement();
+
+                String textId = txtId.getText();
+                String reason = txtReason.getText();
+                String textBrand = txtBrand.getText();
+                // String textMac
+                String textModel = txtModel.getText();
+                String textVersion = txtVersion.getText();
+                String textDate = txtDate.getText();
+
+                //String deferred = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,CURDATE()  FROM `inventory_project`.`in_maintanance` WHERE mac_address="+textMac;
+                String deferred = "INSERT INTO `inventory_project`.`deferred` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`,`deferred_date`,`reason`) VALUES ('" + textId + "','" + textMac + "','" + textBrand + "','" + textModel + "','" + textVersion + "','" + textDate + "', CURDATE(),'" + reason + "' );";
+
+                statement.executeUpdate(deferred);
+
+                TimeUnit.SECONDS.sleep(1);
+
+                String deferred2 = "DELETE FROM `inventory_project`.`in_maintanance` WHERE mac_address=" + textMac;
+                statement.executeUpdate(deferred2);
+
+                txtBrand.setText("");
+                txtMac.setText("");
+                txtModel.setText("");
+                txtVersion.setText("");
+                txtId.setText("");
+                txtDate.setText("");
+
+                data = FXCollections.observableArrayList();
+                //Execute query and store result in a resultset
+                ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM `inventory_project`.`in_maintanance`");
+
+                while (rs.next()) {
+                    //get string from db
+                    data.add(new maintanance(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+                }
+
+            } catch (ClassNotFoundException ex) {
+
+                System.err.println("Error: " + ex);
             }
 
-        } catch (ClassNotFoundException ex) {
+            //set cell value factor to tableview.
+            //PropertyValue Factory must be set the same with the one set in model class.
+            columnId2.setCellValueFactory(new PropertyValueFactory<>("id"));
+            columnMac2.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
+            columnBrand2.setCellValueFactory(new PropertyValueFactory<>("brand"));
+            columnModel2.setCellValueFactory(new PropertyValueFactory<>("model"));
+            columnVersion2.setCellValueFactory(new PropertyValueFactory<>("version"));
+            columnAddition_date2.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
+            columnWorker_name2.setCellValueFactory(new PropertyValueFactory<>("worker_name"));
 
-            System.err.println("Error: " + ex);
-        }
+            tableInMaintanance.setItems(null);
+            tableInMaintanance.setItems(data);
 
-        //set cell value factor to tableview.
-        //PropertyValue Factory must be set the same with the one set in model class.
-        columnId2.setCellValueFactory(new PropertyValueFactory<>("id"));
-        columnMac2.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
-        columnBrand2.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        columnModel2.setCellValueFactory(new PropertyValueFactory<>("model"));
-        columnVersion2.setCellValueFactory(new PropertyValueFactory<>("version"));
-        columnAddition_date2.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
-        columnWorker_name2.setCellValueFactory(new PropertyValueFactory<>("worker_name"));
-        
+            //Lets create a cell factory to insert a button in every row.
+            Callback<TableColumn<maintanance, String>, TableCell<maintanance, String>> cellFactory = (param) -> {
 
-        tableInMaintanance.setItems(null);
-        tableInMaintanance.setItems(data);
+                //make the tablecell containing button
+                final TableCell<maintanance, String> cell = new TableCell<maintanance, String>() {
 
-        //Lets create a cell factory to insert a button in every row.
-        Callback<TableColumn<maintanance, String>, TableCell<maintanance, String>> cellFactory = (param) -> {
+                    //override updateItem method
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
 
-            //make the tablecell containing button
-            final TableCell<maintanance, String> cell = new TableCell<maintanance, String>() {
+                        //ensure that cell is created only on non-empty rows
+                        if (empty) {
+                            setGraphic(null);
+                            setText(null);
+                        } else {
+                            //Now we create the action button
+                            final Button editButton = new Button("EDIT");
+                            //attach listener on button
+                            editButton.setOnAction(event -> {
 
-                //override updateItem method
-                @Override
-                public void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty);
+                                //Extract the clicked object
+                                maintanance p = getTableView().getItems().get(getIndex());
 
-                    //ensure that cell is created only on non-empty rows
-                    if (empty) {
-                        setGraphic(null);
-                        setText(null);
-                    } else {
-                        //Now we create the action button
-                        final Button editButton = new Button("EDIT");
-                        //attach listener on button
-                        editButton.setOnAction(event -> {
+                                //DATA 
+                                //System.out.println(p.getMac_address());  String.valueOf(p.getId())
+                                txtBrand.setText(String.valueOf(p.getBrand()));
+                                txtMac.setText(String.valueOf(p.getMac_address()));
+                                txtModel.setText(String.valueOf(p.getModel()));
+                                txtVersion.setText(String.valueOf(p.getVersion()));
+                                txtId.setText(String.valueOf(p.getId()));
+                                txtDate.setText(String.valueOf(p.getAddition_date()));
 
-                            //Extract the clicked object
-                            maintanance p = getTableView().getItems().get(getIndex());
+                                //PREVENT USER FROM EDITING TEXTFIELDS                               
+                                txtBrand.setEditable(false);
+                                txtMac.setEditable(false);
+                                txtModel.setEditable(false);
+                                txtVersion.setEditable(false);
+                                txtId.setEditable(false);
+                                txtDate.setEditable(false);
 
-                            //DATA 
-                            //System.out.println(p.getMac_address());  String.valueOf(p.getId())
-                            txtBrand.setText(String.valueOf(p.getBrand()));
-                            txtMac.setText(String.valueOf(p.getMac_address()));
-                            txtModel.setText(String.valueOf(p.getModel()));
-                            txtVersion.setText(String.valueOf(p.getVersion()));
-                            txtId.setText(String.valueOf(p.getId()));
-                            txtDate.setText(String.valueOf(p.getAddition_date()));
+                            });
+                            //Setting created button
+                            setGraphic(editButton);
+                            setText(null);
+                        }
 
-                            //PREVENT USER FROM EDITING TEXTFIELDS                               
-                            txtBrand.setEditable(false);
-                            txtMac.setEditable(false);
-                            txtModel.setEditable(false);
-                            txtVersion.setEditable(false);
-                            txtId.setEditable(false);
-                            txtDate.setEditable(false);
-
-                        });
-                        //Setting created button
-                        setGraphic(editButton);
-                        setText(null);
                     }
+                ;
 
-                }
-            ;
-
-            };
+                };
             
             return cell;
-        };
-        //set the custom factory to action column
-        columnEdit2.setCellFactory(cellFactory);
+            };
+            //set the custom factory to action column
+            columnEdit2.setCellFactory(cellFactory);
         }
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

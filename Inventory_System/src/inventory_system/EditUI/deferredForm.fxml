@@ -7,17 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="644.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="644.0" prefWidth="1103.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
    <children>
-      <TableView fx:id="tableDeferred" layoutX="11.0" layoutY="50.0" prefHeight="534.0" prefWidth="870.0">
+      <TableView fx:id="tableDeferred" layoutX="11.0" layoutY="50.0" prefHeight="534.0" prefWidth="1087.0">
         <columns>
-          <TableColumn fx:id="columnId4" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="columnMac4" prefWidth="144.80001831054688" text="MAC_ADDRESS" />
-            <TableColumn fx:id="columnBrand4" prefWidth="120.0" text="BRAND" />
-            <TableColumn fx:id="columnModel4" prefWidth="141.5999755859375" text="MODEL" />
-            <TableColumn fx:id="columnVersion4" prefWidth="128.00006103515625" text="VERSION" />
-            <TableColumn fx:id="columnAddition_date4" prefWidth="124.00006103515625" text="ADDITION_DATE" />
-            <TableColumn fx:id="columnDeferred_date4" prefWidth="132.0" text="DEFERRED_DATE" />
+          <TableColumn fx:id="columnId4" prefWidth="59.20001220703125" text="ID" />
+          <TableColumn fx:id="columnMac4" prefWidth="140.0" text="MAC_ADDRESS" />
+            <TableColumn fx:id="columnBrand4" prefWidth="130.4000244140625" text="BRAND" />
+            <TableColumn fx:id="columnModel4" prefWidth="132.7999267578125" text="MODEL" />
+            <TableColumn fx:id="columnVersion4" prefWidth="134.4000244140625" text="VERSION" />
+            <TableColumn fx:id="columnAddition_date4" prefWidth="153.5999755859375" text="ADDITION_DATE" />
+            <TableColumn fx:id="columnDeferred_date4" prefWidth="164.0" text="DEFERRED_DATE" />
+            <TableColumn fx:id="columnReason" prefWidth="169.60003662109375" text="REASON" />
         </columns>
       </TableView>
       <Label layoutX="314.0" layoutY="14.0" prefHeight="36.0" prefWidth="263.0" text="DEFERRED MACHINES">

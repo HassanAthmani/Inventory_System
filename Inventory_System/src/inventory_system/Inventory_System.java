@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package inventory_system;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +25,10 @@ public class Inventory_System extends Application {
         stage.setResizable(false);
         stage.resizableProperty();
         stage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth()-stage.getWidth())/2);
+        stage.setY((primScreenBounds.getHeight()-stage.getHeight())/2);
+        
     }
 
     /**

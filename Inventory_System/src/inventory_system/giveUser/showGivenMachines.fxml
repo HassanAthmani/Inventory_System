@@ -8,22 +8,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="1409.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="inventory_system.giveUser.ShowGivenMachinesController">
+<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.giveUser.ShowGivenMachinesController">
    <children>
-      <TableView fx:id="tableGivenMachines" layoutX="25.0" layoutY="53.0" prefHeight="514.0" prefWidth="1366.0">
+      <TableView fx:id="tableGivenMachines" layoutX="25.0" layoutY="53.0" prefHeight="514.0" prefWidth="1307.0">
          <columns>
             <TableColumn fx:id="columnId2" prefWidth="47.200008392333984" text="ID" />
-            <TableColumn fx:id="columnMac2" prefWidth="123.20001220703125" text="MAC_ADDRESS" />
-            <TableColumn fx:id="columnBrand2" prefWidth="120.79997253417969" text="BRAND" />
-            <TableColumn fx:id="columnModel2" prefWidth="118.39996337890625" text="MODEL" />
-            <TableColumn fx:id="columnVersion2" prefWidth="136.800048828125" text="VERSION" />
-            <TableColumn fx:id="columnAddition_date2" prefWidth="142.4000244140625" text="ADDITION_DATE" />
-            <TableColumn fx:id="columnUser_name2" prefWidth="124.0" text="USER_NAME" />
-            <TableColumn fx:id="columnUser_phone2" prefWidth="114.40008544921875" text="USER_PHONE" />
-            <TableColumn fx:id="columnWorker_name2" prefWidth="123.2000732421875" text="WORKER_NAME" />
-            <TableColumn fx:id="columnDate_assigned2" prefWidth="188.800048828125" text="DATE_ASSIGNED" />
-            <TableColumn fx:id="columnEdit2" prefWidth="148.7999267578125" text="EDIT" />
+            <TableColumn fx:id="columnMac2" prefWidth="133.60000610351562" text="MAC_ADDRESS" />
+            <TableColumn fx:id="columnBrand2" prefWidth="109.59999084472656" text="BRAND" />
+            <TableColumn fx:id="columnModel2" prefWidth="112.79998779296875" text="MODEL" />
+            <TableColumn fx:id="columnVersion2" prefWidth="117.5999755859375" text="VERSION" />
+            <TableColumn fx:id="columnAddition_date2" prefWidth="140.79998779296875" text="ADDITION_DATE" />
+            <TableColumn fx:id="columnUser_name2" prefWidth="139.99993896484375" text="USER_NAME" />
+            <TableColumn fx:id="columnUser_phone2" prefWidth="129.5999755859375" text="USER_PHONE" />
+            <TableColumn fx:id="columnWorker_name2" prefWidth="143.199951171875" text="WORKER_NAME" />
+            <TableColumn fx:id="columnDate_assigned2" prefWidth="146.39990234375" text="DATE_ASSIGNED" />
+            <TableColumn fx:id="columnEdit2" prefWidth="82.4000244140625" text="EDIT" />
          </columns>
       </TableView>
       <TextField fx:id="txtId" layoutX="38.0" layoutY="577.0" prefHeight="26.0" prefWidth="122.0" promptText="ID" />
@@ -31,7 +30,7 @@
       <TextField fx:id="txtBrand" layoutX="439.0" layoutY="577.0" promptText="BRAND" />
       <TextField fx:id="txtModel" layoutX="640.0" layoutY="577.0" promptText="MODEL" />
       <TextField fx:id="txtVersion" layoutX="850.0" layoutY="577.0" promptText="VERSION" />
-      <TextField fx:id="txtDate" layoutX="1090.0" layoutY="577.0" promptText="ADDITION_DATE" />
+      <TextField fx:id="txtDate" layoutX="1058.0" layoutY="577.0" promptText="ADDITION_DATE" />
       <Button layoutX="205.0" layoutY="626.0" mnemonicParsing="false" onAction="#returnToInstock" prefHeight="26.0" prefWidth="201.0" text="RETURN MACHINE TO INSTOCK">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -57,5 +56,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <TextField fx:id="txtReason" layoutX="1058.0" layoutY="626.0" prefHeight="26.0" prefWidth="244.0" promptText=" REASON FOR MACHINE TO BE DEFERRED" />
    </children>
 </AnchorPane>

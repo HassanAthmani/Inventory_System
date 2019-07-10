@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="05197feb-b112-4307-88b1-164bcd362c03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/built-jar.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/Inventory_System.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/Inventory_System.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/ShowGivenMachinesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/giveUserController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/giveUserController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/giveUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/giveUser/giveUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/InMaintananceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/build/classes/inventory_system/maintanance/maintananceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.html" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/dist/Inventory_System.jnlp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/src/inventory_system/Inventory_System.java" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/src/inventory_system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_System/src/inventory_system/giveUser/giveUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory_System/src/inventory_system/giveUser/giveUserController.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Inventory_System$All_Features_in__Inventory_System.ic" NAME="All Features in: Inventory_System Coverage Results" MODIFIED="1549301440837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1765961657">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="53" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="53" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Inventory_System/src/inventory_system/Main.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Desktop/New folder (2)/android-NetworkConnect-master/android-NetworkConnect-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="703" />
+    <option name="y" value="122" />
+    <option name="width" value="1184" />
+    <option name="height" value="940" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Inventory_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Inventory_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Inventory_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Inventory_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="inventory_system" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549301478685" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="All Features in: Inventory_System" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="CUCUMBER_CORE_VERSION" value="3" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="Inventory_System" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
+      <option name="SUGGESTED_NAME" value="All Features in: Inventory_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="false" />
+          <option name="INCLUDE" value="false" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber java.All Features in: Inventory_System" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05197feb-b112-4307-88b1-164bcd362c03" name="Default Changelist" comment="" />
+      <created>1549300882455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549300882455</updated>
+      <workItem from="1549300883955" duration="866000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_Features_in__Inventory_System - 2019.02.04 at 20h 26m 04s.xml">
+      <configuration name="All Features in: Inventory_System" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__Inventory_System - 2019.02.04 at 20h 31m 09s.xml">
+      <configuration name="All Features in: Inventory_System" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__Inventory_System - 2019.02.04 at 20h 31m 20s.xml">
+      <configuration name="All Features in: Inventory_System" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="866000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14876477" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295583" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997735" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info active="true" anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.32975295" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Inventory_System/src/inventory_system/Main.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Android API 28 Platform</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

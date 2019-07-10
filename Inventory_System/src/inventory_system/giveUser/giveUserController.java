@@ -190,7 +190,9 @@ public class giveUserController implements Initializable {
                                textBrand.setEditable(false);
                                textMac.setEditable(false);
                                textModel.setEditable(false);
-                               textVersion.setEditable(false);                                    
+                               textVersion.setEditable(false);  
+                               textID.setEditable(false);
+                               textDate.setEditable(false);
         
 
                             

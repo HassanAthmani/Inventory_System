@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="665.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="729.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
    <children>
-      <TableView fx:id="tableInstock" layoutX="239.0" layoutY="56.0" prefHeight="606.0" prefWidth="835.0">
+      <TableView fx:id="tableInstock" layoutX="292.0" layoutY="42.0" prefHeight="671.0" prefWidth="674.0">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="54.39997863769531" text="ID" />
-          <TableColumn fx:id="columnMac" prefWidth="132.800048828125" text="MAC ADDRESS" />
-            <TableColumn fx:id="columnBrand" prefWidth="116.00006103515625" text="BRAND" />
-            <TableColumn fx:id="columnModel" prefWidth="132.0" text="MODEL" />
-            <TableColumn fx:id="columnVersion" prefWidth="132.7999267578125" text="VERSION" />
-            <TableColumn fx:id="columnDate" prefWidth="139.99997558593748" text="ADDITION DATE" />
-            <TableColumn fx:id="columnEdit" prefWidth="139.99997558593748" text="EDIT" />
+          <TableColumn fx:id="columnMac" prefWidth="121.60003662109375" text="MAC ADDRESS" />
+            <TableColumn fx:id="columnBrand" prefWidth="105.60000610351562" text="BRAND" />
+            <TableColumn fx:id="columnModel" prefWidth="109.60003662109375" text="MODEL" />
+            <TableColumn fx:id="columnVersion" prefWidth="105.60009765625" text="VERSION" />
+            <TableColumn fx:id="columnDate" minWidth="0.0" prefWidth="103.199951171875" text="ADDITION DATE" />
+            <TableColumn fx:id="columnEdit" prefWidth="71.2000732421875" text="EDIT" />
         </columns>
       </TableView>
       <Label layoutX="66.0" layoutY="162.0" prefHeight="18.0" prefWidth="104.0" text="MAC ADDRESS">
@@ -50,22 +50,25 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="addRecord" layoutX="42.0" layoutY="359.0" mnemonicParsing="false" onAction="#addData" prefHeight="38.0" prefWidth="132.0" text="ADD RECORD">
+      <Button fx:id="addRecord" layoutX="42.0" layoutY="429.0" mnemonicParsing="false" onAction="#addData" prefHeight="26.0" prefWidth="132.0" text="ADD RECORD">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="loadData" layoutX="56.0" layoutY="439.0" mnemonicParsing="false" onAction="#loadFromDB" prefHeight="26.0" prefWidth="104.0" text="LOAD DATA">
+      <Button fx:id="loadData" layoutX="66.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadFromDB" prefHeight="26.0" prefWidth="104.0" text="LOAD DATA">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button layoutX="32.0" layoutY="592.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="152.0" text="Back to Dashboard">
+      <Button layoutX="32.0" layoutY="658.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="152.0" text="Back to Dashboard">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="deleteRow" layoutX="42.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="38.0" prefWidth="132.0" text="SEND TO DEFERRED">
+      <Button fx:id="deleteRow" layoutX="42.0" layoutY="590.0" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="38.0" prefWidth="132.0" text="SEND TO DEFERRED">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <TextField fx:id="txtReason" layoutX="14.0" layoutY="531.0" prefHeight="26.0" prefWidth="244.0" promptText=" REASON FOR MACHINE TO BE DEFERRED" />
+      <TextField fx:id="textDate" layoutX="56.0" layoutY="365.0" prefHeight="26.0" prefWidth="104.0" promptText="VERSION" visible="false" />
+      <TextField fx:id="textId" layoutX="56.0" layoutY="28.0" prefHeight="26.0" prefWidth="104.0" promptText="BRAND" visible="false" />
    </children>
 </AnchorPane>

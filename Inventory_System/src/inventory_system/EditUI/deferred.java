@@ -20,9 +20,10 @@ public class deferred {
     private final StringProperty version;
     private final StringProperty addition_date;
     private final StringProperty deferred_date;
+    private final StringProperty reason;
 
     //Constructor
-    public deferred(String id, String mac_address, String brand, String model, String version, String addition_date, String deferred_date) {
+    public deferred(String id, String mac_address, String brand, String model, String version, String addition_date, String deferred_date,String reason) {
 
         this.id = new SimpleStringProperty(id);
         this.mac_address = new SimpleStringProperty(mac_address);
@@ -31,6 +32,7 @@ public class deferred {
         this.version = new SimpleStringProperty(version);
         this.addition_date = new SimpleStringProperty(addition_date);
         this.deferred_date = new SimpleStringProperty(deferred_date);
+        this.reason = new SimpleStringProperty (reason);
 
     }
 
@@ -62,6 +64,10 @@ public class deferred {
     public String getDeferred_date(){
         return deferred_date.get();
     }
+    
+   public String getReason(){
+       return reason.get();
+   }
 
     //Setters
     
@@ -92,6 +98,10 @@ public class deferred {
     public void setDeferred_date(String Value){
         deferred_date.set(Value);
     }
+    
+    public void setReason(String Value){
+        reason.set(Value);
+    }
 
     //Property values
     
@@ -121,6 +131,10 @@ public class deferred {
     
     public StringProperty deferred_dateProperty(){
         return deferred_date;
+    }
+    
+    public StringProperty reason(){
+        return reason;
     }
     
 }

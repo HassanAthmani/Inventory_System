@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="1107.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="inventory_system.maintanance.InMaintananceController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.maintanance.InMaintananceController">
    <children>
-      <TableView fx:id="tableInMaintanance" layoutX="33.0" layoutY="52.0" prefHeight="514.0" prefWidth="1063.0">
+      <TableView fx:id="tableInMaintanance" layoutX="33.0" layoutY="52.0" prefHeight="514.0" prefWidth="1190.0">
          <columns>
             <TableColumn fx:id="columnId2" prefWidth="47.200008392333984" text="ID" />
             <TableColumn fx:id="columnMac2" prefWidth="123.20001220703125" text="MAC_ADDRESS" />
@@ -19,9 +18,9 @@
             <TableColumn fx:id="columnModel2" prefWidth="118.39996337890625" text="MODEL" />
             <TableColumn fx:id="columnVersion2" prefWidth="136.800048828125" text="VERSION" />
             <TableColumn fx:id="columnAddition_date2" prefWidth="142.4000244140625" text="ADDITION_DATE" />
-            <TableColumn fx:id="columnWorker_name2" prefWidth="123.2000732421875" text="WORKER_NAME" />
-            <TableColumn fx:id="columnAssigned_date" prefWidth="148.7999267578125" text="ASSIGNED_DATE" />
-            <TableColumn fx:id="columnEdit2" prefWidth="123.2000732421875" text="EDIT" />
+            <TableColumn fx:id="columnWorker_name2" prefWidth="185.5999755859375" text="WORKER_NAME" />
+            <TableColumn fx:id="columnAssigned_date" prefWidth="209.60003662109375" text="ASSIGNED_DATE" />
+            <TableColumn fx:id="columnEdit2" prefWidth="104.00006103515625" text="EDIT" />
          </columns>
       </TableView>
       <TextField fx:id="txtId" layoutX="47.0" layoutY="574.0" prefHeight="26.0" prefWidth="74.0" promptText="ID" />
@@ -55,5 +54,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <TextField fx:id="txtReason" layoutX="974.0" layoutY="574.0" prefHeight="26.0" prefWidth="244.0" promptText=" REASON FOR MACHINE TO BE DEFERRED" />
    </children>
 </AnchorPane>

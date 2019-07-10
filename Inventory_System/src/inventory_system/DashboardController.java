@@ -67,6 +67,7 @@ public class DashboardController implements Initializable {
         
         //setting scene variable
         Parent sceneFxml= FXMLLoader.load(getClass().getResource("maintanance/MaintananceForm.fxml"));
+        
         Scene newScene=new Scene(sceneFxml);
         
         //getting stage
