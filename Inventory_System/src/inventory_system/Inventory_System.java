@@ -17,7 +17,7 @@ public class Inventory_System extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/inventory_system/login/loginForm.fxml"));
         
         Scene scene = new Scene(root);
         

@@ -52,8 +52,7 @@ public class InstockDocumentController implements Initializable {
     public static String userName = "root";
     public static String password = "";
     
-     String txtId;
-    String txtDate;
+     
     
     
 ///INSTOCK

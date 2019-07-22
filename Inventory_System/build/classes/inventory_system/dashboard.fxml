@@ -10,5 +10,6 @@
       <Button fx:id="instock" layoutX="520.0" layoutY="55.0" mnemonicParsing="false" onAction="#ShowInstock" prefHeight="74.0" prefWidth="139.0" text="ADD MACHINE" />
       <Button fx:id="Deferred" layoutX="457.0" layoutY="196.0" mnemonicParsing="false" onAction="#ShowDeferred" prefHeight="74.0" prefWidth="218.0" text="SHOW DEFERRED MACHINES" />
       <Button fx:id="withUser" layoutX="270.0" layoutY="55.0" mnemonicParsing="false" onAction="#ShowWithUser" prefHeight="74.0" prefWidth="178.0" text="GIVE USER MACHINE" />
+      <Button layoutX="304.0" layoutY="380.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="105.0" text="Logout Out" />
    </children>
 </AnchorPane>

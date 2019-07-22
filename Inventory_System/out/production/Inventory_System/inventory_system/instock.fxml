@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="729.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.InstockDocumentController">
+   <children>
+      <TableView fx:id="tableInstock" layoutX="292.0" layoutY="42.0" prefHeight="671.0" prefWidth="674.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="54.39997863769531" text="ID" />
+          <TableColumn fx:id="columnMac" prefWidth="121.60003662109375" text="MAC ADDRESS" />
+            <TableColumn fx:id="columnBrand" prefWidth="105.60000610351562" text="BRAND" />
+            <TableColumn fx:id="columnModel" prefWidth="109.60003662109375" text="MODEL" />
+            <TableColumn fx:id="columnVersion" prefWidth="105.60009765625" text="VERSION" />
+            <TableColumn fx:id="columnDate" minWidth="0.0" prefWidth="103.199951171875" text="ADDITION DATE" />
+            <TableColumn fx:id="columnEdit" prefWidth="71.2000732421875" text="EDIT" />
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="162.0" prefHeight="18.0" prefWidth="104.0" text="MAC ADDRESS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="83.0" layoutY="56.0" prefHeight="18.0" prefWidth="78.0" text="BRAND">
+         <opaqueInsets>
+            <Insets bottom="100.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="264.0" prefHeight="18.0" prefWidth="55.0" text="MODEL">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="144.0" layoutY="264.0" prefHeight="18.0" prefWidth="86.0" text="VERSION">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="textBrand" layoutX="56.0" layoutY="97.0" prefHeight="26.0" prefWidth="104.0" promptText="BRAND" />
+      <TextField fx:id="textMac" layoutX="42.0" layoutY="196.0" prefHeight="26.0" prefWidth="132.0" promptText="MAC ADDRESS" />
+      <TextField fx:id="textModel" layoutX="9.0" layoutY="300.0" prefHeight="26.0" prefWidth="86.0" promptText="MODEL" />
+      <TextField fx:id="textVersion" layoutX="118.0" layoutY="300.0" prefHeight="26.0" prefWidth="104.0" promptText="VERSION" />
+      <Label layoutX="240.0" layoutY="4.0" prefHeight="47.0" prefWidth="710.0" text="                               INSTOCK">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Button fx:id="addRecord" layoutX="42.0" layoutY="429.0" mnemonicParsing="false" onAction="#addData" prefHeight="26.0" prefWidth="132.0" text="ADD RECORD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="loadData" layoutX="66.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadFromDB" prefHeight="26.0" prefWidth="104.0" text="LOAD DATA">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="32.0" layoutY="658.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="152.0" text="Back to Dashboard">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="deleteRow" layoutX="42.0" layoutY="590.0" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="38.0" prefWidth="132.0" text="SEND TO DEFERRED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtReason" layoutX="14.0" layoutY="531.0" prefHeight="26.0" prefWidth="244.0" promptText=" REASON FOR MACHINE TO BE DEFERRED" />
+      <TextField fx:id="textDate" layoutX="56.0" layoutY="365.0" prefHeight="26.0" prefWidth="104.0" promptText="VERSION" visible="false" />
+      <TextField fx:id="textId" layoutX="56.0" layoutY="28.0" prefHeight="26.0" prefWidth="104.0" promptText="BRAND" visible="false" />
+   </children>
+</AnchorPane>

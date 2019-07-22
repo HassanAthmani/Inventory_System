@@ -124,4 +124,18 @@ public class DashboardController implements Initializable {
         
     }
     
+    @FXML
+    void LogOut(ActionEvent event) throws IOException {
+         //setting scene variable
+        Parent sceneFxml = FXMLLoader.load(getClass().getResource("/inventory_system/login/loginForm.fxml"));
+        Scene newScene = new Scene(sceneFxml);
+
+        //getting stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        //setting scene on stage
+        window.setScene(newScene);
+        window.show();
+    }
+
 }
