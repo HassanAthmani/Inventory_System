@@ -48,6 +48,9 @@ public class login implements Initializable {
      PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
+
+
+
     @FXML
     void loginToDashboard(ActionEvent event) throws SQLException {
         
@@ -105,7 +108,10 @@ public class login implements Initializable {
     
         
         
-        
+        /*lightcyan #E0FFFF
+         * CYAN #00FFFF
+          * AQUA #00FFFF
+          **/
         
 
     }
@@ -113,5 +119,6 @@ public class login implements Initializable {
 @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    //username1.getScene().getStylesheets().add("/stylesheet/background.css");
     }
 }

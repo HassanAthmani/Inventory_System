@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.all_items.All_itemsUIController">
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="912.0" style="-fx-background-color: #00FFFF;" stylesheets="@../stylesheet/background.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.all_items.All_itemsUIController">
    <children>
       <TableView fx:id="tableAll" layoutX="-2.0" layoutY="74.0" prefHeight="498.0" prefWidth="915.0">
         <columns>
@@ -19,7 +19,7 @@
             <TableColumn fx:id="columnDate" minWidth="0.0" prefWidth="178.39990234375" text="ADDITION DATE" />
         </columns>
       </TableView>
-      <Button fx:id="LoaData" layoutX="402.0" layoutY="582.0" mnemonicParsing="false" onAction="#LoadDataFrmDB" prefHeight="34.0" prefWidth="102.0" text="LOAD DATA">
+      <Button fx:id="LoaData" layoutX="402.0" layoutY="582.0" mnemonicParsing="false" onAction="#LoadDataFrmDB" prefHeight="34.0" prefWidth="118.0" text="LOAD DATA">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

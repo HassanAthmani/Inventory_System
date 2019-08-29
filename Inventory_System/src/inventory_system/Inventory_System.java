@@ -21,13 +21,17 @@ public class Inventory_System extends Application {
         
         Scene scene = new Scene(root);
         
+        
+        //scene.getStylesheets().add(getClass().getResource("/stylesheet/background.css").toExternalForm());
+        
         stage.setScene(scene);
         stage.setResizable(false);
         stage.resizableProperty();
-        stage.show();
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        /*Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth()-stage.getWidth())/2);
-        stage.setY((primScreenBounds.getHeight()-stage.getHeight())/2);
+        stage.setY((primScreenBounds.getHeight()-stage.getHeight())/2);*/
+        stage.show();
+        
         
     }
 

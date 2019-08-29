@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.giveUser.ShowGivenMachinesController">
+<AnchorPane id="AnchorPane" prefHeight="695.0" prefWidth="1356.0" style="-fx-background-color: #00FFFF;" stylesheets="@../stylesheet/background.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.giveUser.ShowGivenMachinesController">
    <children>
       <TableView fx:id="tableGivenMachines" layoutX="25.0" layoutY="53.0" prefHeight="514.0" prefWidth="1307.0">
          <columns>

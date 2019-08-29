@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="345.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.login.login">
+<AnchorPane id="AnchorPane" prefHeight="345.0" prefWidth="573.0" style="-fx-background-color: #00FFFF;" stylesheets="@../stylesheet/background.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.login.login">
    <children>
       <Label layoutX="121.0" layoutY="24.0" prefHeight="50.0" prefWidth="334.0" text="INVENTORY SYSTEM">
          <font>

@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,9 @@ import javafx.stage.Stage;
  * @author User
  */
 public class DashboardController implements Initializable {
+    
+     @FXML
+    private AnchorPane anchor;
 
     @FXML
     private Button AllItems;
@@ -43,6 +47,7 @@ public class DashboardController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+     //  
         // TODO
     }    
 

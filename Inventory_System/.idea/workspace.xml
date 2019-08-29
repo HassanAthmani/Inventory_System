@@ -2,22 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2b176bf-09df-4ee9-8e03-5e1da3c05e85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inventory_system/login/login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inventory_system/stylesheet/background.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/DashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/EditUI/deferredForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/EditUI/deferredForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/InstockDocumentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/InstockDocumentController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/InstockDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/InstockDocumentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/Inventory_System.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/Inventory_System.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/all_items/all_itemsUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/all_items/all_itemsUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/edit/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/edit/edit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/giveUser/giveUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/giveUser/giveUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/giveUser/showGivenMachines.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/giveUser/showGivenMachines.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/instock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/instock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/login/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/login/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/login/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/login/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/maintanance/MaintananceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/maintanance/MaintananceForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/inventory_system/maintanance/inMaintanance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/inventory_system/maintanance/inMaintanance.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Inventory_System.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Inventory_System.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Inventory_System.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Inventory_System.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Inventory_System.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Inventory_System.jnlp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/DashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/EditUI/deferredForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/EditUI/deferredForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/InstockDocumentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/InstockDocumentController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/InstockDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/InstockDocumentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/Inventory_System.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/Inventory_System.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/all_items/all_itemsUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/all_items/all_itemsUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/edit/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/edit/edit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/giveUser/giveUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/giveUser/giveUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/giveUser/showGivenMachines.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/giveUser/showGivenMachines.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/instock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/instock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/login/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/login/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/login/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/login/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/maintanance/MaintananceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/maintanance/MaintananceForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/maintanance/inMaintanance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Inventory_System/inventory_system/maintanance/inMaintanance.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inventory_system/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/EditUI/deferredForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/EditUI/deferredForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inventory_system/InstockDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/InstockDocumentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inventory_system/Inventory_System.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/Inventory_System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/all_items/all_itemsUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/all_items/all_itemsUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inventory_system/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/edit/edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/edit/edit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/giveUser/giveUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/giveUser/giveUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/giveUser/showGivenMachines.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/giveUser/showGivenMachines.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/instock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/instock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/login/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/login/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/maintanance/MaintananceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/maintanance/MaintananceForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inventory_system/maintanance/inMaintanance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inventory_system/maintanance/inMaintanance.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,43 +65,54 @@
     <session id="-1365516336">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.171" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.77" value="1" />
+          <entry key="project.open.time.83" value="1" />
           <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="1" />
-          <entry key="java" value="1" />
+          <entry key="css" value="2" />
+          <entry key="fxml" value="11" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="XML" value="1" />
+          <entry key="CSS" value="2" />
+          <entry key="JAVA" value="4" />
+          <entry key="XML" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="fxml" value="5" />
+          <entry key="css" value="1" />
+          <entry key="fxml" value="6" />
+          <entry key="java" value="80" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="XML" value="5" />
+          <entry key="CSS" value="1" />
+          <entry key="JAVA" value="80" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/inventory_system/login/login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+            <state relative-caret-position="468">
+              <caret line="111" column="23" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,13 +121,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        <entry file="file://$PROJECT_DIR$/src/inventory_system/stylesheet/background.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="21">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/inventory_system/InstockDocumentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="664" column="11" selection-start-line="664" selection-start-column="11" selection-end-line="664" selection-end-column="11" />
+              <folding>
+                <element signature="e#6425#9410#0" />
+                <element signature="e#9416#13844#0" />
+                <element signature="e#13851#17394#0" />
+                <element signature="e#17410#17841#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -91,6 +161,7 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -108,6 +179,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml" />
+        <option value="$PROJECT_DIR$/src/inventory_system/stylesheet/background.css" />
         <option value="$PROJECT_DIR$/src/inventory_system/login/login.java" />
       </list>
     </option>
@@ -118,10 +190,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="708" />
-    <option name="width" value="1184" />
-    <option name="height" value="940" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1042" />
+    <option name="height" value="738" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -129,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -156,17 +228,26 @@
               <item name="inventory_system" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Inventory_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inventory_System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="inventory_system" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheet" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563822775982" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567086686707" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -212,18 +293,31 @@
       <option name="presentableId" value="Default" />
       <updated>1563706995755</updated>
       <workItem from="1563707005833" duration="1789000" />
-      <workItem from="1563818978913" duration="3404000" />
+      <workItem from="1563818978913" duration="4605000" />
+      <workItem from="1563905643709" duration="1343000" />
+      <workItem from="1565462573144" duration="1955000" />
+      <workItem from="1565727229070" duration="1211000" />
+      <workItem from="1565788944972" duration="604000" />
+      <workItem from="1567019807256" duration="5711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5193000" />
+    <option name="totallyTimeSpent" value="17218000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25349087" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20784102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -232,11 +326,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.3295583" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -260,20 +354,87 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml">
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/instock.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/dashboard.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/maintanance/inMaintanance.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/maintanance/MaintananceForm.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/giveUser/giveUser.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/giveUser/showGivenMachines.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/EditUI/deferredForm.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/edit/edit.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/all_items/all_itemsUI.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/all_items/All_itemsUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="94" column="48" lean-forward="true" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/login/loginForm.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/inventory_system/login/login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+        <state relative-caret-position="468">
+          <caret line="111" column="23" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/stylesheet/background.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inventory_system/InstockDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="664" column="11" selection-start-line="664" selection-start-column="11" selection-end-line="664" selection-end-column="11" />
+          <folding>
+            <element signature="e#6425#9410#0" />
+            <element signature="e#9416#13844#0" />
+            <element signature="e#13851#17394#0" />
+            <element signature="e#17410#17841#0" />
           </folding>
         </state>
       </provider>

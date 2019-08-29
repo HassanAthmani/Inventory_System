@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,16 +30,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import inventory_system.EditUI.deferred;
-import static inventory_system.all_items.All_itemsUIController.password;
-import static inventory_system.all_items.All_itemsUIController.userName;
-import inventory_system.all_items.all_items;
-import java.util.logging.Level;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
@@ -110,6 +102,12 @@ public class InstockDocumentController implements Initializable {
     
     @FXML
     private Button deleteRow;
+    
+     @FXML
+    private Button change;
+
+    @FXML
+    private Button remove;
     
     
     ////////////////////////////////////////
@@ -378,7 +376,7 @@ public class InstockDocumentController implements Initializable {
                     }
                     else{
                         //Now we create the action button
-                        final Button editButton=new Button("EDIT");
+                        final Button editButton=new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event ->{
                             
@@ -399,10 +397,10 @@ public class InstockDocumentController implements Initializable {
                                
                                
                                //PREVENT USER FROM EDITING TEXTFIELDS                               
-                               textBrand.setEditable(false);
-                               textMac.setEditable(false);
-                               textModel.setEditable(false);
-                               textVersion.setEditable(false);                                    
+                               textBrand.setEditable(true);
+                               textMac.setEditable(true);
+                               textModel.setEditable(true);
+                               textVersion.setEditable(true);                                    
         
 
                             
@@ -519,6 +517,145 @@ public class InstockDocumentController implements Initializable {
         //setting scene on stage
         window.setScene(newScene);
         window.show();
+
+    }
+    
+    @FXML
+    void changeItem(ActionEvent event) throws SQLException, InterruptedException {
+        
+        String txtBrand =toUpperCase( textBrand.getText());
+        String txtMac = textMac.getText();
+        String txtModel = toUpperCase(textModel.getText());
+        String txtVersion = toUpperCase(textVersion.getText());
+        int txtId=Integer.valueOf(textId.getText());
+        
+        if( textBrand.getText().isEmpty() || textMac.getText().isEmpty() || textModel.getText().isEmpty() || textVersion.getText().isEmpty() ){
+            int response = JOptionPane.showConfirmDialog(
+        null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);
+            
+        }
+        else{
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+            connection = DriverManager.getConnection(url, userName, password);
+            Statement statement = connection.createStatement();
+
+            
+
+            String sql = "UPDATE `inventory_project`.`all_items` SET `mac_address`='"+txtMac+"', `brand`='"+txtBrand+"', `model`='"+txtModel+"', `version`='"+txtVersion+"', `addition_date`=CURDATE() WHERE id ='"+txtId+"' ;";
+
+            statement.executeUpdate(sql);
+            
+            String delete="DELETE FROM `inventory_project`.`instock` WHERE id="+txtId+" " ;
+            
+            statement.executeUpdate(delete);
+            TimeUnit.SECONDS.sleep((long) 0.5);  
+            
+            String instock1 = "INSERT INTO `inventory_project`.`instock` SELECT * FROM `inventory_project`.`all_items` WHERE `id`="+txtId;
+            statement.executeUpdate(instock1);
+            
+            
+
+            data = FXCollections.observableArrayList();
+            //Execute query and store result in a resultset
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM inventory_project.instock");
+
+            while (rs.next()) {
+                //get string from db
+                data.add(new instock(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+            }
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error: " + ex);
+        }
+
+        //set cell value factor to tableview.
+        //PropertyValue Factory must be set the same with the one set in model class.
+        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columnMac.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
+        columnBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        columnModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        columnVersion.setCellValueFactory(new PropertyValueFactory<>("version"));
+        columnDate.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
+
+        tableInstock.setItems(null);
+        tableInstock.setItems(data);
+        
+         //SET TEXTFIELDS TO BE BLANK
+        textBrand.setText("");
+        textMac.setText("");
+        textModel.setText("");
+        textVersion.setText("");
+        }
+        
+
+    }
+    
+      @FXML
+    void removeItem(ActionEvent event) throws ClassNotFoundException, SQLException  {
+        
+        String txtMac = textMac.getText();
+        int txtId=Integer.valueOf(textId.getText());
+        
+        
+        if( textBrand.getText().isEmpty() || textMac.getText().isEmpty() || textModel.getText().isEmpty() || textVersion.getText().isEmpty() ){
+            int response = JOptionPane.showConfirmDialog(
+        null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);
+            
+        }
+        else{
+             try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+            connection = DriverManager.getConnection(url, userName, password);
+            Statement statement = connection.createStatement();
+            
+            String delete="DELETE FROM `inventory_project`.`instock` WHERE `id` ='"+txtId+"' " ;
+            String delete1="DELETE FROM `inventory_project`.`all_items` WHERE `id` ='"+txtId+"' " ;
+            
+            statement.executeUpdate(delete);
+            statement.executeUpdate(delete1);
+            
+            data = FXCollections.observableArrayList();
+            //Execute query and store result in a resultset
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM inventory_project.instock");
+
+            while (rs.next()) {
+                //get string from db
+                data.add(new instock(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+            }
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Error: " + ex);
+        }
+
+        //set cell value factor to tableview.
+        //PropertyValue Factory must be set the same with the one set in model class.
+        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columnMac.setCellValueFactory(new PropertyValueFactory<>("mac_address"));
+        columnBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        columnModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        columnVersion.setCellValueFactory(new PropertyValueFactory<>("version"));
+        columnDate.setCellValueFactory(new PropertyValueFactory<>("addition_date"));
+
+        tableInstock.setItems(null);
+        tableInstock.setItems(data);
+        
+         //SET TEXTFIELDS TO BE BLANK
+        textBrand.setText("");
+        textMac.setText("");
+        textModel.setText("");
+        textVersion.setText("");
+        
+        }
+        
+        
+         
+       
 
     }
     

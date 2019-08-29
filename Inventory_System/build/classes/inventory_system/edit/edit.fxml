@@ -4,8 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="221.0" prefWidth="238.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="inventory_system.edit.EditController">
+<AnchorPane id="AnchorPane" prefHeight="221.0" prefWidth="238.0" style="-fx-background-color: #00FFFF;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.edit.EditController">
    <children>
       <Button layoutX="42.0" layoutY="35.0" mnemonicParsing="false" onAction="#giveUser" prefHeight="26.0" prefWidth="138.0" text="GIVE USER">
          <font>
