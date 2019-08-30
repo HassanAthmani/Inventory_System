@@ -27,6 +27,7 @@ public class Inventory_System extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.resizableProperty();
+        stage.setTitle("TDSL Asset Management System");
         /*Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth()-stage.getWidth())/2);
         stage.setY((primScreenBounds.getHeight()-stage.getHeight())/2);*/
