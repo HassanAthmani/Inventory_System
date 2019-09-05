@@ -33,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import inventory_system.EditUI.deferred;
+import static inventory_system.escapeChar.escapeChar1;
 import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
@@ -255,9 +256,10 @@ public class InstockDocumentController implements Initializable {
 
     @FXML
     void addData(ActionEvent event) throws SQLException, InterruptedException {
+        
 
         String txtBrand =toUpperCase( textBrand.getText());
-        String txtMac = textMac.getText();
+        String txtMac = toUpperCase( escapeChar1(textMac.getText())) ;
         String txtModel = toUpperCase(textModel.getText());
         String txtVersion = toUpperCase(textVersion.getText());
         
@@ -283,7 +285,7 @@ public class InstockDocumentController implements Initializable {
              
             TimeUnit.SECONDS.sleep(1);  
             
-            String instock1 = "INSERT INTO `inventory_project`.`instock` SELECT * FROM `inventory_project`.`all_items` WHERE mac_address="+txtMac;
+            String instock1 = "INSERT INTO `inventory_project`.`instock` SELECT * FROM `inventory_project`.`all_items` WHERE ( mac_address LIKE '%"+txtMac+"%')";
             statement.executeUpdate(instock1);
             
             
@@ -426,7 +428,8 @@ public class InstockDocumentController implements Initializable {
      @FXML
     void deleteSelectedRow(ActionEvent event) throws SQLException, InterruptedException {
         
-        String txtMac = textMac.getText();
+        String txtMac = toUpperCase( escapeChar1(textMac.getText()));
+        
         if(textMac.getText().isEmpty() || txtReason.getText().isEmpty()){
             int response = JOptionPane.showConfirmDialog(
         null,"no field should be empty","Required Input",JOptionPane.DEFAULT_OPTION);            
@@ -458,7 +461,7 @@ public class InstockDocumentController implements Initializable {
             
             TimeUnit.SECONDS.sleep(1);  
             
-            String instock2 = "DELETE FROM `inventory_project`.`instock` WHERE mac_address="+txtMac;
+            String instock2 = "DELETE FROM `inventory_project`.`instock` WHERE ( mac_address LIKE '%"+txtMac+"%')";
             statement.executeUpdate(instock2);
             
             
@@ -524,7 +527,7 @@ public class InstockDocumentController implements Initializable {
     void changeItem(ActionEvent event) throws SQLException, InterruptedException {
         
         String txtBrand =toUpperCase( textBrand.getText());
-        String txtMac = textMac.getText();
+        String txtMac = toUpperCase( escapeChar1(textMac.getText()));
         String txtModel = toUpperCase(textModel.getText());
         String txtVersion = toUpperCase(textVersion.getText());
         int txtId=Integer.valueOf(textId.getText());
@@ -597,7 +600,7 @@ public class InstockDocumentController implements Initializable {
       @FXML
     void removeItem(ActionEvent event) throws ClassNotFoundException, SQLException  {
         
-        String txtMac = textMac.getText();
+        String txtMac = toUpperCase( escapeChar1(textMac.getText()));
         int txtId=Integer.valueOf(textId.getText());
         
         

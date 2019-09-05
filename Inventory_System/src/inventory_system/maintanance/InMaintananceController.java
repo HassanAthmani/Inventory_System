@@ -6,6 +6,7 @@
 package inventory_system.maintanance;
 
 import static inventory_system.InstockDocumentController.userName;
+import static inventory_system.escapeChar.escapeChar1;
 import static inventory_system.giveUser.ShowGivenMachinesController.password;
 import inventory_system.giveUser.giveUser;
 import static inventory_system.maintanance.maintananceController.password;
@@ -37,6 +38,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 /**
  * FXML Controller class
@@ -183,7 +185,7 @@ public class InMaintananceController implements Initializable {
                         setText(null);
                     } else {
                         //Now we create the action button
-                        final Button editButton = new Button("EDIT");
+                        final Button editButton = new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event -> {
 
@@ -226,7 +228,7 @@ public class InMaintananceController implements Initializable {
 
     @FXML
     void returnToInstock(ActionEvent event) throws SQLException, InterruptedException {
-        String textMac = txtMac.getText();
+        String textMac = toUpperCase( escapeChar1(txtMac.getText()));
 
         if (txtMac.getText().isEmpty()) {
             int response = JOptionPane.showConfirmDialog(
@@ -307,7 +309,7 @@ public class InMaintananceController implements Initializable {
                             setText(null);
                         } else {
                             //Now we create the action button
-                            final Button editButton = new Button("EDIT");
+                            final Button editButton = new Button("+");
                             //attach listener on button
                             editButton.setOnAction(event -> {
 
@@ -352,7 +354,7 @@ public class InMaintananceController implements Initializable {
 
     @FXML
     void sendToDeferred(ActionEvent event) throws SQLException, InterruptedException {
-        String textMac = txtMac.getText();
+        String textMac = toUpperCase( escapeChar1(txtMac.getText()));
 
         if (txtMac.getText().isEmpty() || txtReason.getText().isEmpty()) {
             int response = JOptionPane.showConfirmDialog(
@@ -435,7 +437,7 @@ public class InMaintananceController implements Initializable {
                             setText(null);
                         } else {
                             //Now we create the action button
-                            final Button editButton = new Button("EDIT");
+                            final Button editButton = new Button("+");
                             //attach listener on button
                             editButton.setOnAction(event -> {
 

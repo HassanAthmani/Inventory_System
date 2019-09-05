@@ -7,12 +7,7 @@ package inventory_system.giveUser;
 
 
 
-import static inventory_system.InstockDocumentController.password;
-import static inventory_system.InstockDocumentController.userName;
-import static inventory_system.all_items.All_itemsUIController.password;
-import static inventory_system.all_items.All_itemsUIController.userName;
-import inventory_system.all_items.all_items;
-import inventory_system.instock;
+import static inventory_system.escapeChar.escapeChar1;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -32,7 +27,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -169,7 +163,7 @@ public class giveUserController implements Initializable {
                     }
                     else{
                         //Now we create the action button
-                        final Button editButton=new Button("EDIT");
+                        final Button editButton=new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event ->{
                             
@@ -215,7 +209,7 @@ public class giveUserController implements Initializable {
 
     @FXML
     void GiveUser(ActionEvent event) throws ClassNotFoundException, SQLException, InterruptedException {
-        String txtMac = textMac.getText();
+        String txtMac = toUpperCase( escapeChar1(textMac.getText()));
         String txtId=textID.getText();
         String txtBrand=textBrand.getText();
         String txtModel=textModel.getText();
@@ -245,7 +239,7 @@ public class giveUserController implements Initializable {
             statement.executeUpdate(sql);
             TimeUnit.SECONDS.sleep(1);  
             
-            String instock2 = "DELETE FROM `inventory_project`.`instock` WHERE mac_address="+txtMac;
+            String instock2 = "DELETE FROM `inventory_project`.`instock` WHERE ( mac_address LIKE '%"+txtMac+"%')";
             statement.executeUpdate(instock2);
             
             

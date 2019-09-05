@@ -7,9 +7,7 @@ package inventory_system.maintanance;
 
 
 
-import static inventory_system.giveUser.giveUserController.password;
-import static inventory_system.giveUser.giveUserController.userName1;
-import inventory_system.giveUser.giveUser_1;
+import static inventory_system.escapeChar.escapeChar1;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -29,7 +27,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -166,7 +163,7 @@ public class maintananceController implements Initializable {
                     }
                     else{
                         //Now we create the action button
-                        final Button editButton=new Button("EDIT");
+                        final Button editButton=new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event ->{
                             
@@ -212,7 +209,7 @@ public class maintananceController implements Initializable {
     @FXML
     void sendToMaintanance(ActionEvent event) throws SQLException, ClassNotFoundException, InterruptedException {
         
-        String txtMac=textMac.getText();        
+        String txtMac= toUpperCase( escapeChar1(textMac.getText()));     
         String txtId=textID.getText();
         String txtBrand=textBrand.getText();
         String txtModel=textModel.getText();
@@ -285,7 +282,7 @@ public class maintananceController implements Initializable {
                     }
                     else{
                         //Now we create the action button
-                        final Button editButton=new Button("EDIT");
+                        final Button editButton=new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event ->{
                             

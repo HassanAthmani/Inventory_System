@@ -5,11 +5,8 @@
  */
 package inventory_system.giveUser;
 
-import static inventory_system.InstockDocumentController.password;
 import static inventory_system.InstockDocumentController.userName;
-import static inventory_system.giveUser.giveUserController.password;
-import static inventory_system.giveUser.giveUserController.userName1;
-import inventory_system.instock;
+import static inventory_system.escapeChar.escapeChar1;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -37,6 +34,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 
 public class ShowGivenMachinesController implements Initializable {
@@ -183,7 +181,7 @@ public class ShowGivenMachinesController implements Initializable {
                         setText(null);
                     } else {
                         //Now we create the action button
-                        final Button editButton = new Button("EDIT");
+                        final Button editButton = new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event -> {
 
@@ -227,7 +225,8 @@ public class ShowGivenMachinesController implements Initializable {
 
     @FXML
     void returnToInstock(ActionEvent event) throws SQLException, InterruptedException {
-        String textMac = txtMac.getText();
+        
+        String textMac  = toUpperCase( escapeChar1(txtMac.getText()));
         
         if(txtMac.getText().isEmpty()){
              int response = JOptionPane.showConfirmDialog(
@@ -243,12 +242,12 @@ public class ShowGivenMachinesController implements Initializable {
             Statement statement = connection.createStatement(); 
  
             
-            String instock = "INSERT INTO `inventory_project`.`instock` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`  FROM `inventory_project`.`with_user` WHERE mac_address="+textMac;
+            String instock = "INSERT INTO `inventory_project`.`instock` (`id`, `mac_address`, `brand`, `model`, `version`, `addition_date`) SELECT `id`, `mac_address`, `brand`, `model`, `version`, `addition_date`  FROM `inventory_project`.`with_user` WHERE ( mac_address LIKE '%"+textMac+"%')";
             statement.executeUpdate(instock);
             
             TimeUnit.SECONDS.sleep(1);  
             
-            String instock2 = "DELETE FROM `inventory_project`.`with_user` WHERE mac_address="+textMac;
+            String instock2 = "DELETE FROM `inventory_project`.`with_user` WHERE ( mac_address LIKE '%"+textMac+"%')";
             statement.executeUpdate(instock2);
             
              txtBrand.setText("");
@@ -305,7 +304,7 @@ public class ShowGivenMachinesController implements Initializable {
                         setText(null);
                     } else {
                         //Now we create the action button
-                        final Button editButton = new Button("EDIT");
+                        final Button editButton = new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event -> {
 
@@ -350,7 +349,7 @@ public class ShowGivenMachinesController implements Initializable {
 
     @FXML
     void sendToDeferred(ActionEvent event) throws SQLException, InterruptedException {
-        String textMac = txtMac.getText();
+        String textMac  = toUpperCase( escapeChar1(txtMac.getText()));
         
         if(txtMac.getText().isEmpty() || txtReason.getText().isEmpty()){
              int response = JOptionPane.showConfirmDialog(
@@ -382,7 +381,7 @@ public class ShowGivenMachinesController implements Initializable {
             
             TimeUnit.SECONDS.sleep(1);  
             
-            String deferred2 = "DELETE FROM `inventory_project`.`with_user` WHERE mac_address="+textMac;
+            String deferred2 = "DELETE FROM `inventory_project`.`with_user` WHERE ( mac_address LIKE '%"+textMac+"%')";
             statement.executeUpdate(deferred2);
             
             txtBrand.setText("");
@@ -439,7 +438,7 @@ public class ShowGivenMachinesController implements Initializable {
                         setText(null);
                     } else {
                         //Now we create the action button
-                        final Button editButton = new Button("EDIT");
+                        final Button editButton = new Button("+");
                         //attach listener on button
                         editButton.setOnAction(event -> {
 
